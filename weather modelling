@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+#define NUM_DAYS 365
+
+void generate_weather_data(float temperatures[], int humidities[], int windspeeds[]) {
+    srand(0);
+    for (int i = 0; i < NUM_DAYS; i++) {
+        temperatures[i] = 20 + 10 * sin(i * (2 * M_PI) / NUM_DAYS);
+        humidities[i] = rand() % 31 + 40;
+        windspeeds[i] = rand() % 21;
+    }
+}
+
+char* predict_weather(float temperature, int humidity, int windspeed) {
+    if (temperature > 25 && humidity < 50)
+        return "Sunny";
+    else if (temperature > 15 && temperature <= 25 && windspeed > 10)
+        return "Windy";
+    else
+        return "Cloudy";
+}
+
+int main() {
+    float temperatures[NUM_DAYS];
+    int humidities[NUM_DAYS];
+    int windspeeds[NUM_DAYS];
+
+    generate_weather_data(temperatures, humidities, windspeeds);
+
+    printf("Day\tWeather Prediction\n");
+    for (int day = 0; day < NUM_DAYS; day++) {
+        char* prediction = predict_weather(temperatures[day], humidities[day], windspeeds[day]);
+        printf("%d\t%s\n", day + 1, prediction);
+    }
+
+    return 0;
+}
