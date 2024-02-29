@@ -1,0 +1,49 @@
+#include <stdio.h>
+
+void requirementsPhase();
+void designPhase();
+void implementationPhase();
+void testingPhase();
+void deploymentPhase();
+void maintenancePhase();
+
+int main() {
+    requirementsPhase();
+    designPhase();
+    implementationPhase();
+    testingPhase();
+    deploymentPhase();
+    maintenancePhase();
+
+    return 0;
+}
+
+void requirementsPhase() {
+    printf("Requirements Phase:\n");
+    printf("Gathering and documenting software requirements.\n");
+}
+
+void designPhase() {
+    printf("\nDesign Phase:\n");
+    printf("Creating detailed design specifications based on requirements.\n");
+}
+
+void implementationPhase() {
+    printf("\nImplementation Phase:\n");
+    printf("Writing code based on design specifications.\n");
+}
+
+void testingPhase() {
+    printf("\nTesting Phase:\n");
+    printf("Verifying that the software meets requirements and functions correctly.\n");
+}
+
+void deploymentPhase() {
+    printf("\nDeployment Phase:\n");
+    printf("Installing the software and making it available for users.\n");
+}
+
+void maintenancePhase() {
+    printf("\nMaintenance Phase:\n");
+    printf("Addressing issues, adding new features, and updating the software as needed.\n");
+}
